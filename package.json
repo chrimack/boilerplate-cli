@@ -1,0 +1,13 @@
+{
+  "name": "boilerplate-cli",
+  "version": "1.0.0",
+  "description": "A CLI tool for creating the boilerplate for a React app",
+  "license": "MIT",
+  "bin": {
+    "boil": "bin/boilerplate"
+  },
+  "scripts": {},
+  "dependencies": {
+    "minimist": "^1.2.6"
+  }
+}
