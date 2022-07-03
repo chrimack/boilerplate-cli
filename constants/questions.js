@@ -1,12 +1,17 @@
-const path = require('path');
-
 const choices = require('./choices');
 const doesPathExist = require('../utils/does-path-exist');
 const errorMessages = require('./error-messages');
+const questionNames = require('./question-names');
+
+const types = {
+  confirm: 'confirm',
+  input: 'input',
+  list: 'list',
+};
 
 const project = {
-  name: 'project-name',
-  type: 'input',
+  name: questionNames.projectName,
+  type: types.input,
   message: 'Project name: ',
   validate: (input) => {
     let valid = true;
@@ -33,52 +38,57 @@ const project = {
 };
 
 const git = {
-  name: 'git',
-  type: 'confirm',
+  name: questionNames.git,
+  type: types.confirm,
   message: 'Initialize a git repository? (defaults to false)',
   default: false,
 };
 
 const package = {
-  name: 'package',
-  type: 'confirm',
+  name: questionNames.package,
+  type: types.confirm,
   message: 'Use a package manager? (defaults to false)',
   default: false,
 };
 
 const packageManager = {
-  name: 'package-manager',
-  type: 'list',
+  name: questionNames.packageManager,
+  type: types.list,
   message: 'Choose a package manager (defaults to npm)',
   choices: Object.values(choices.packageManager),
   default: 'npm',
 };
 
 const installDependencies = {
-  name: 'install',
-  type: 'confirm',
+  name: questionNames.dependencies,
+  type: types.confirm,
   message: 'Install Dependencies (defaults to false)',
   default: false,
 };
 
 const bundler = {
-  name: 'bundler',
-  type: 'list',
+  name: questionNames.bundler,
+  type: types.list,
   message: 'Choose a bundler (defaults to webpack)',
   choices: Object.values(choices.bundler),
 };
 
 const typescript = {
-  name: 'typescript',
-  type: 'confirm',
+  name: questionNames.typescript,
+  type: types.confirm,
   message: 'Do you want to use typescript (defaults to false)',
   default: false,
 };
 
 const transpiler = {
-  name: 'transpiler',
-  type: 'list',
+  name: questionNames.transpiler,
+  type: types.list,
   message: 'Choose a transpiler (defaults to babel)',
   choices: Object.values(choices.transpiler),
   default: 'babel',
+};
+
+module.exports = {
+  setA: [project, git, bundler, typescript, transpiler, package],
+  setB: [packageManager, installDependencies],
 };
