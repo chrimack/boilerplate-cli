@@ -28,5 +28,4 @@ module.exports = () => {
       error(`${cmd} is not a valid command`, true);
       break;
   }
-  console.log(args);
 };
