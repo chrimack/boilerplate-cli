@@ -1,7 +1,14 @@
-const choices = require('./choices');
-const doesPathExist = require('../utils/does-path-exist');
-const errorMessages = require('./error-messages');
-const questionNames = require('./question-names');
+// const choices = require('./choices');
+import { choices } from './choices.js';
+
+// const doesPathExist = require('../utils/does-path-exist');
+import { doesPathExist } from '../utils/does-path-exist.js';
+
+// const errorMessages = require('./error-messages');
+import { errorMessages } from './error-messages.js';
+
+// const questionNames = require('./question-names');
+import { questionNames } from './question-names.js';
 
 const types = {
   confirm: 'confirm',
@@ -44,7 +51,7 @@ const git = {
   default: false,
 };
 
-const package = {
+const usePackageManager = {
   name: questionNames.package,
   type: types.confirm,
   message: 'Use a package manager? (defaults to false)',
@@ -88,7 +95,6 @@ const transpiler = {
   default: 'babel',
 };
 
-module.exports = {
-  setA: [project, git, bundler, typescript, transpiler, package],
-  setB: [packageManager, installDependencies],
-};
+export const setA = [project, git, bundler, typescript, transpiler, usePackageManager];
+
+export const setB = [packageManager, installDependencies];

@@ -1,4 +1,4 @@
-module.exports = {
+export const questionNames = {
   projectName: 'project-name',
   git: 'git',
   package: 'package',

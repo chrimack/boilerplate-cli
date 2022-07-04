@@ -1,4 +1,4 @@
-module.exports = {
+export const errorMessages = {
   invalidProjectName: `
   Project must
     1) start with a letter

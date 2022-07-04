@@ -4,12 +4,14 @@
   "description": "A CLI tool for creating the boilerplate for a React app",
   "license": "MIT",
   "bin": {
-    "boil": "bin/boilerplate"
+    "boil": "bin/boilerplate.js"
   },
   "scripts": {},
   "dependencies": {
     "chalk": "^5.0.1",
+    "esm": "^3.2.25",
     "inquirer": "^9.0.0",
     "minimist": "^1.2.6"
-  }
+  },
+  "type": "module"
 }

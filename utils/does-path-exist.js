@@ -1,6 +1,7 @@
-const fs = require('fs');
+// const fs = require('fs');
+import fs from 'fs';
 
-module.exports = (path) => {
+export const doesPathExist = (path) => {
   try {
     return fs.existsSync(path);
   } catch (error) {
